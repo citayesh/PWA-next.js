@@ -2,7 +2,7 @@ import React from "react";
 import {
   CollectionPageContainer,
   CollectionTitle,
-  CollectionItemsContainer} from './Collection.style';
+  CollectionItemsContainer} from '../../../styles/Collection.style';
 import { useSelector } from "react-redux";
 import {selectCollection} from "../../../redux/shop/shop.selectors"
 import CollectionItem from "../../../components/collection-item/CollectionItem.component";

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import {SignInAndSignUpContainer} from "./SigninUp.style"
+import {SignInAndSignUpContainer} from "../../styles/SigninUp.style"
 import Signin from '../../components/sign-in/Signin.component';
 import SignUp from "../../components/sign-up/SignUp.component"
 import {GlobalStyle } from "../../styles/global.styles"
