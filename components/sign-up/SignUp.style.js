@@ -6,6 +6,8 @@ export const SignUpContainer = styled.div`
   width: 380px;
 `;
 
-export const SignUpTitle = styled.h2`
+export const SignUpTitle = styled.p`
   margin: 10px 0;
+  font-weight:bold;
+  font-size:20px;
 `;

@@ -3,8 +3,8 @@ import CustomButton from '../custom-button/CustomButton.component';
 import FormInput from '../form-input/FormInput.component';
 import {createUserProfileDocument ,doCreateUserWithEmailAndPassword} from "../../service/firebase/auth"
 import {SignUpTitle,SignUpContainer} from './SignUp.style';
-import { useRouter } from 'next/dist/client/router';
-import {auth } from "../../service/firebase/firebase"
+
+
 function SignUp(){
 const [state,setState]=useState({
     displayName: '',

@@ -8,9 +8,10 @@ export const CollectionPageContainer = styled.div`
     }
 `;
 
-export const CollectionTitle = styled.h2`
+export const CollectionTitle = styled.p`
       font-size: 38px;
       margin: 0 auto 30px;
+      font-weight:bold;
 `;
 
 export const CollectionItemsContainer = styled.div`
