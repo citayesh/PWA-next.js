@@ -1,9 +1,10 @@
 import '../styles/globals.css';
-import { Provider } from 'react-redux'
-import { useStore } from "../redux/store"
-import { persistStore } from 'redux-persist'
-import { PersistGate } from 'redux-persist/integration/react'
+import { Provider } from 'react-redux';
+import { useStore } from "../redux/store";
+import { persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
 import Head from 'next/head';
+
 
 function MyApp({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState)
@@ -46,4 +47,6 @@ function MyApp({ Component, pageProps }) {
     )
 }
 
-export default MyApp
+
+
+export default  MyApp;

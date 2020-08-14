@@ -7,12 +7,12 @@ import { fetchCollectionsStartAsync } from "../redux/shop/shop.action";
 import { setCurrentUser } from '../redux/user/user.action';
 import{auth} from "../service/firebase/firebase";
 import{createUserProfileDocument} from "../service/firebase/auth"
+import {wrapper} from '../redux/store'
 
 
 function App (){
   const dispatch=useDispatch();
-  useEffect(()=>{
-    dispatch(fetchCollectionsStartAsync()) 
+  useEffect(()=>{ 
     let unsubscribeFromAuth =true
     if(unsubscribeFromAuth){
   auth.onAuthStateChanged(async userAuth => {
@@ -41,5 +41,10 @@ function App (){
     );
   
   }  
+  App.getInitialProps = async ({ store }) => {
+    await store.dispatch(fetchCollectionsStartAsync())
+};
   
-  export default App;
+  export default wrapper.withRedux(App);
+
+  
