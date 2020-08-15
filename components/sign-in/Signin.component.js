@@ -6,6 +6,7 @@ import {doSignInWithEmailAndPassword,signInWithGoogle} from "../../service/fireb
 import { useRouter } from 'next/dist/client/router';
 
 function Signin(){
+  const router=useRouter();
     const [state, setState] = useState({ email: "", password: "" });
     function handleChange(event){
         const {name,value}=event.target;
@@ -25,7 +26,7 @@ function Signin(){
 <SignInContainer>
     <SignInTitle>I allready have an account</SignInTitle>
     <span>Sign in with your email and password</span>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} onsubmit="location.reload(true)">
     <FormInput 
     name="email"
      value={state.email} 

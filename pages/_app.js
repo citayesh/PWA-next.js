@@ -1,14 +1,14 @@
 import '../styles/globals.css';
-import { Provider } from 'react-redux';
-import { useStore } from "../redux/store";
-import { persistStore } from 'redux-persist';
+import {  wrapper } from "../redux/store";
 import { PersistGate } from 'redux-persist/integration/react';
 import Head from 'next/head';
+import { useStore } from "react-redux";
+
 
 
 function MyApp({ Component, pageProps }) {
-  const store = useStore(pageProps.initialReduxState)
-  const persistor = persistStore(store)
+  const store = useStore((state) => state);
+  
   return(
     <>
     <Head>
@@ -38,15 +38,13 @@ function MyApp({ Component, pageProps }) {
         <link rel="apple-touch-icon" href="/apple-icon.png"></link>
         <meta name="theme-color" content="#317EFB" />
       </Head>
-    <Provider store={store}>
-    <PersistGate loading={<Component {...pageProps} />} persistor={persistor}>
+    <PersistGate persistor={store.__persistor} loading={<div>Loading</div>}>
       <Component {...pageProps} />
     </PersistGate>
-    </Provider>
     </>
     )
+
 }
+export default wrapper.withRedux(MyApp)
 
 
-
-export default  MyApp;

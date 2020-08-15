@@ -48,7 +48,7 @@ const [state,setState]=useState({
       <SignUpContainer>
         <SignUpTitle>I do not have a account</SignUpTitle>
         <span>Sign up with your email and password</span>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} onsubmit="location.reload(true)">
           <FormInput
             type='text'
             name='displayName'
